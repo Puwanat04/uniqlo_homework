@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/model/recipe.dart';
+import 'package:uniqlo_homework/Model/uniqlo.dart';
+
 
 void main() {
   runApp(const RecipeApp());
@@ -12,13 +13,15 @@ class RecipeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'UNIQLO STORE',
+      title: 'Shirt STORE',
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
           centerTitle: true,
+          backgroundColor: Color.fromARGB(255, 255, 21, 21),
+          foregroundColor: Colors.white
         ),
       ),
-      home: const MyHomePage(title: 'UNIQLO STORE'),
+      home: const MyHomePage(title: 'Shirt STORE'),
     );
   }
 }
@@ -41,16 +44,16 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SafeArea(
           child: ListView.builder(
             itemBuilder: (BuildContext context, int index) {
-              return buildRecipeCard(Recipe.samples[index]);
+              return buildRecipeCard(Shirt.samples[index]);
             },
-            itemCount: Recipe.samples.length,
+            itemCount: Shirt.samples.length,
           ),
         ),
       );
   }
 }
 
-Widget buildRecipeCard(Recipe recipe) {
+Widget buildRecipeCard(Shirt recipe) {
   return Card(
     child: Column(
       children: <Widget>[
